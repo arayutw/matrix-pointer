@@ -198,42 +198,36 @@ mp.position: Position | null
 */
 ```
 
-### `on()`
-```js
-const handler = (event) => {
-  //{
-  //  target: MatrixPointer
-  //  type: "blur" | "focus"
-  //  id: unknown
-  //  x: number
-  //  y: number
-  //}
-  console.log(event);
+### Events
+It extends the [emitter](https://github.com/arayutw/emitter), allowing the use of `on()`, `off()`, and `emit()`.  
+The following is the definition of the events.
+
+```ts
+type Events = {
+  blur: {
+    id: unknown
+    x: number
+    y: number
+  }
+  focus: {
+    id: unknown
+    x: number
+    y: number
+  }
 }
-
-a.on("blur", handler, {
-  once: false,
-});
-
-a.on("focus", handler, {
-  once: false,
-});
 ```
-
-### `off()`
-```js
-mp.off("focus", handler);
-```
-
-### `emit()`
-```js
-mp.emit("click", {
-  x: 12,
-  y: 34,
+```ts
+mp.on("focus", (event) => {
+  console.log(event.type, event);
+  /*
+    event = {
+      id: unknown
+      x: number
+      y: number
+    } & {
+      type: "focus"
+      target: MatrixPointer
+    }
+  */
 });
-```
-
-### `destroy`
-```js
-mp.destroy();
 ```
