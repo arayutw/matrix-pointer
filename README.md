@@ -183,6 +183,21 @@ mp.moveBy("y", false);  // top
 const newPosition = mp.moveBy("y", true); // bottom
 ```
 
+### `position`
+Check current position with position property.
+```ts
+mp.position: Position | null
+```
+```ts
+/*
+{
+  id: unknown
+  x: number
+  y: number
+}
+*/
+```
+
 ### `on()`
 ```js
 const handler = (event) => {
