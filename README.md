@@ -1,10 +1,10 @@
 # MatrixPointer
-This is a library that assists in focusing on any position of a matrix and moving relative or absolute to that position.
+This library helps focus and move relative or absolute to any position in a matrix.
 
 ## Features
 - Written in Typescript
 - Has no dependencies (e.g. jquery)
-- Lightweight, 1KB
+- Lightweight, 4KB
 - Supports ES6
 
 ## Install
