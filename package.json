@@ -1,0 +1,55 @@
+{
+  "name": "@arayutw/matrix-pointer",
+  "version": "0.0.1",
+  "description": "This is a library that assists in focusing on any position of a matrix and moving relative or absolute to that position.",
+  "keywords": [
+    "matrix",
+    "focus",
+    "pointer"
+  ],
+  "homepage": "https://github.com/arayutw/matrix-pointer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arayutw/matrix-pointer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arayutw/matrix-pointer/issues"
+  },
+  "main": "dist/scripts/matrix-pointer.cjs.js",
+  "module": "dist/scripts/matrix-pointer.esm.js",
+  "scripts": {
+    "build": "node_modules/typescript/bin/tsc -d;node run/build.mjs",
+    "test": "node node_modules/jest/bin/jest"
+  },
+  "author": "Yuta Arai <arayutw@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@arayutw/emitter-import": "^0.0.2",
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^11.1.0",
+    "babel-loader": "^9.1.2",
+    "esbuild": "^0.17.10",
+    "jest": "^29.5.0",
+    "rollup": "^3.18.0",
+    "rollup-plugin-dts": "^5.2.0",
+    "rollup-plugin-esbuild": "^5.0.0",
+    "ts-jest": "^29.1.0",
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.5",
+    "uglify-js": "^3.17.4"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "require": "./dist/scripts/matrix-pointer.cjs.js",
+      "import": "./dist/scripts/matrix-pointer.esm.js",
+      "default": "./dist/scripts/matrix-pointer.esm.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

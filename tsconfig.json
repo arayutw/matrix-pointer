@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "sourceMap": true,
+        "mapRoot": "./",
+        "moduleResolution": "node",
+        "emitDeclarationOnly": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "declarationDir": "./dist/types",
+        "declaration": true,
+        "lib": [
+            "dom",
+            "ES6"
+        ]
+    },
+    "include": [
+        "src/scripts/index.ts",
+        "node_modules/@arayutw"
+    ]
+}

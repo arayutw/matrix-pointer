@@ -2,16 +2,19 @@
 <html>
 
 <head>
+  <title>MatrixPointer demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./style.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="../dist/scripts/matrix-pointer.js"></script>
+  <script src="../../dist/scripts/matrix-pointer.js"></script>
 </head>
 
 <body class="p-4">
   <h1 class="text-3xl font-bold underline">
-    Hello world!
+    MatrixPointer demo
   </h1>
+
+  <p>Please try moving the position of the matrix using buttons or the keyboard. This library assists in determining the
+    destination position.</p>
 
   <table class="p-4 my-4 table-auto border-collapse border border-slate-400 w-full" id="table">
     <tbody>
@@ -94,13 +97,13 @@
     </div>
     <div class="my-4 p-4 border border-gray-200 rounded dark:border-gray-700">
       <div class="flex items-center mb-4">
-        <input checked id="loose-x" type="checkbox" name="loose" value="x"
+        <input id="loose-x" type="checkbox" name="loose" value="x"
           class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
         <label for="loose-x"
           class="ml-2 select-none text-sm font-medium text-gray-900 dark:text-gray-300">loose.x</label>
       </div>
       <div class="flex items-center">
-        <input checked id="loose-y" type="checkbox" name="loose" value="y"
+        <input id="loose-y" type="checkbox" name="loose" value="y"
           class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
         <label for="loose-y"
           class="ml-2 select-none text-sm font-medium text-gray-900 dark:text-gray-300">loose.y</label>

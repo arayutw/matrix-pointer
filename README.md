@@ -38,6 +38,10 @@ npm install @arayutw/matrix-pointer-import
 import MatrixPointer from "@arayutw/matrix-pointer-import";
 ```
 
+## Demo
+Check out the demo to see the possibilities.  
+[https://arayutw.github.io/matrix-pointer/demo/](https://arayutw.github.io/matrix-pointer/demo/)
+
 ## Usage
 ### load
 #### ESM
@@ -48,11 +52,6 @@ import MatrixPointer from "<pathto>/matrix-pointer.esm"
 #### UMD
 ```html
 <script src="https://unpkg.com/@arayutw/matrix-pointer@latest/dist/scripts/matrix-pointer.js"></script>
-<script>
-  const mp = new MatrixPointer({
-    matrix: []
-  });
-</script>
 ```
 
 ### initialize
@@ -140,32 +139,48 @@ You can also make changes later.
 ```
 mp.loop = true
 ```
-| name | description |
-| --- | --- |
-| `loop` | Wrap-around movement is allowed. |
-| `jump` | When moving beyond the edge, move to the next row or column. |
-| `loose` | When the destination is blank, shift the row or column to move. |
+| name | default | description |
+| --- | --- | --- |
+| `loop` | `true` | Wrap-around movement is allowed. |
+| `jump` | `true` | When moving beyond the edge, move to the next/prev row or column. |
+| `loose` | `false` | When the destination is blank, shift the row or column to move. **Depending on the matrix structure, unreachable positions may exist, so please set accordingly.** |
 
-### `moveTo(x: number, y: number)` | `moveTo(id: unknown)`
-You can move by specifying the x and y array indices or the ID directly.
+### `moveTo()`
+You can move by specifying the x and y array indices or the ID directly. If the movement fails, null will be returned, otherwise a Position object representing the new position information will be returned.
 ```ts
+moveTo(x: number, y: number) => Position | null
+moveTo(id: unknown) => Position | null
+```
+```ts
+/*
 [
   [1, 2, 3],
   [4, 5, 6],
   [7, 8, 9]
 ]
+*/
 
 mp.moveTo(1, 2);  // id=8(x=1,y=2)
-mp.moveTo(5); // id=5(x=1,y=1)
+const newPosition = mp.moveTo(5); // id=5(x=1,y=1)
+/*
+{
+  id: unknown
+  x: number
+  y: number
+}
+*/
 ```
 
-### `moveBy(direction: "x"|"y", next: boolean)`
-Move relative to the current position.
+### `moveBy()`
+Move relative to the current position. See moveTo() for return value description.
+```ts
+moveBy(direction: "x"|"y", next: boolean) => Position | null
+```
 ```ts
 mp.moveBy("x", false);  // left
 mp.moveBy("x", true); // right
 mp.moveBy("y", false);  // top
-mp.moveBy("y", true); // bottom
+const newPosition = mp.moveBy("y", true); // bottom
 ```
 
 ### `on()`
